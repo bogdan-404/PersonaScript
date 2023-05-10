@@ -1,11 +1,11 @@
 import openai
 
-openai.api_key = "YOUR KEY"
-
+# openai.api_key = "YOUR KEY"
+openai.api_key = "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"
 
 messages = [
     {"role": "system", "content": "Hello"},
-    {"role": "user", "content": "Ypur are npc. I am human. You are a character from a medieval world. Your name is John"},
+    {"role": "user", "content": "You are NPC. I am human. You are a character from a medieval world. Your name is John"},
 ]
 
 while True:
