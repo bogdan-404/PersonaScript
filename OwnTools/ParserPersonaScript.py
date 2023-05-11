@@ -57,8 +57,3 @@ class Parser:
         _, value = self.tokens[self.current_token]
         self.consume_token()  # Consume value token
         return key_token.lower(), value
-
-
-# parser = Parser(tokens)
-# parsed_result = parser.parse()
-# print(parsed_result)
