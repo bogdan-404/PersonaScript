@@ -1,12 +1,11 @@
 import sys
-from LexerPesonaScript import Lexer
-from ParserPersonaScript import Parser
-from CommitCreator import Commit
-from CommitRunner import CommitRunner
+from OwnTools.LexerPesonaScript import Lexer
+from OwnTools.ParserPersonaScript import Parser
+from OwnTools.CommitCreator import Commit
+from OwnTools.CommitRunner import CommitRunner
 from ErrorListener import check_for_syntax_error
 
 api_key = "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"
-
 
 def read_txt_file(file_path):
     with open(file_path, 'r') as file:
@@ -22,7 +21,7 @@ def main():
     txt_file_path = sys.argv[1]
     code = read_txt_file(txt_file_path)
 
-    # check_for_syntax_error(txt_file_path)
+    check_for_syntax_error(txt_file_path)
 
     lexer = Lexer()
     tokens = lexer.tokenize(code)
