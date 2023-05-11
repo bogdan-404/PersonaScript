@@ -1,11 +1,12 @@
 import sys
 from OwnTools.LexerPesonaScript import Lexer
 from OwnTools.ParserPersonaScript import Parser
-from OwnTools.CommitCreator import Commit
-from OwnTools.CommitRunner import CommitRunner
+from OwnTools.PromptCreator import Prompt
+from OwnTools.DialogRunner import DialogRunner
 from ErrorListener import check_for_syntax_error
 
-api_key = "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"
+api_key = ""
+
 
 def read_txt_file(file_path):
     with open(file_path, 'r') as file:
@@ -25,18 +26,14 @@ def main():
 
     lexer = Lexer()
     tokens = lexer.tokenize(code)
-    # print(tokens)
-
 
     parser = Parser(tokens)
     parsed_result = parser.parse()
-    # print(parsed_result)
 
-    prompt = Commit(parsed_result)
+    prompt = Prompt(parsed_result)
     prompt = prompt.process()
-    # print(prompt)
 
-    dialog_runner = CommitRunner(api_key, prompt)
+    dialog_runner = DialogRunner(api_key, prompt)
     dialog_runner.run_dialog()
 
 

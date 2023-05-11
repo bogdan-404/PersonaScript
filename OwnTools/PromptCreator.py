@@ -1,4 +1,4 @@
-class Commit:
+class Prompt:
     def __init__(self, data):
         self.data = data
 

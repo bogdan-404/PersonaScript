@@ -1,7 +1,7 @@
 import openai
 
 
-class CommitRunner:
+class DialogRunner:
     def __init__(self, api_key, persona_script_prompt):
         openai.api_key = api_key
         self.messages = [
